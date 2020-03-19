@@ -1,0 +1,5 @@
+.arrange-vertically > * {
+    display: block;
+    display:inline-block;
+  }
+  
