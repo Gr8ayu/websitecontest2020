@@ -5,12 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { MyblogsComponent } from './myblogs/myblogs.component';
+import { NewpostComponent } from './newpost/newpost.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    BlogsComponent,
+    MyblogsComponent,
+    NewpostComponent
   ],
   imports: [
     BrowserModule,
