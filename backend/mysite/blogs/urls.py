@@ -8,6 +8,7 @@ app_name = "blogs"
 urlpatterns = [
 
     url(r'^api/login/$', views.login_api, name='apilogin'),
+    url(r'^api/addpost/$', views.addPost_api, name='apiaddpost'),
     url(r'^login/$', views.loginView, name='login'),
 
 
