@@ -1,7 +1,13 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import login, authenticate,logout
+from django.http import HttpResponse
+from django.core import serializers
 # Create your views here.
-def loginView(request):
+
+@csrf_exempt
+def login_api(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -13,7 +19,10 @@ def loginView(request):
             return HttpResponse(data, content_type="application/json")
             
         else:
-            return redirect('blogs:homepage')
+            return HttpResponse("NO USER")
     else:
         #user_form = loginForm(instance=request.user)
         return redirect('/login')
+
+def loginView(request):
+    return HttpResponse("LOGIN PAGE")

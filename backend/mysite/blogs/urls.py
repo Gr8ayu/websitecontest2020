@@ -7,7 +7,8 @@ app_name = "blogs"
 
 urlpatterns = [
 
-    url(r'^api/login/$', views.loginView, name='login'),
+    url(r'^api/login/$', views.login_api, name='apilogin'),
+    url(r'^login/$', views.loginView, name='login'),
 
 
     # url(r'^new/$', views.PostCreate.as_view(), name="BlogCreate"),
