@@ -60,7 +60,7 @@ def addPost_api(request):
     else:
         return HttpResponse("SEND POST")
 
-def getPosts(request):
+def getPosts_api(request):
     posts = Posts.objects.all()
     data = serializers.serialize("json", posts)
     return HttpResponse(data, content_type="application/json")
