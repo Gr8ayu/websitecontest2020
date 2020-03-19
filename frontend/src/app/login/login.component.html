@@ -1,0 +1,29 @@
+<div class="card mat-elevation-z10" style=" width:500px; padding: 50px; margin-top: 20vh; margin-right:100px;">
+  <div class="card-body">
+    <a routerLink="/signUp" class="float-right btn btn-outline-primary">Sign Up</a>
+    <h5 class="card-title mb-4 mt-1">Sign In</h5>
+    <form>
+      <div class="form-group">
+        <label>Your Email</label>
+        <input name="email" placeholder="Email" [formControl]="email" type="text" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input name="password" placeholder="Password" [formControl]="password" type="password" class="form-control"
+          required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" a routerLink="/dashboard" (click)="onLoginClick()">Login
+        </button>
+      </div>
+    </form>
+    <div>
+      <button class="btn-block btn btn-outline-danger" (click)="onForgotPasswordClick()">Forgot
+        Password</button>
+    </div>
+    <div><br/></div>
+    <div class="alert alert-warning" role="alert" *ngIf=loginError>
+      {{warningText}}
+    </div>
+  </div>
+</div>
