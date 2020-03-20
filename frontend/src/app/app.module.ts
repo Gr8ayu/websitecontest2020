@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { MyblogsComponent } from './myblogs/myblogs.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 @NgModule({
@@ -18,9 +20,11 @@ import { NewpostComponent } from './newpost/newpost.component';
     HomeComponent,
     BlogsComponent,
     MyblogsComponent,
-    NewpostComponent
+    NewpostComponent,
+    ContactsComponent
   ],
   imports: [
+    CKEditorModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
