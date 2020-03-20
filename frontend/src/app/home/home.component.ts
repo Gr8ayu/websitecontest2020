@@ -12,20 +12,22 @@ export class HomeComponent implements OnInit {
     '❤️', '🎈', '🎃', '👓', '💋', '📣', '🖥', '💡'
   ]
 
-  modifyText(emojis, i) {
-    console.log(emojis[i]);
-  }
 
   constructor() { }
 
+  darktheme() {
+    console.log("You want dark?");
+  }
   ngOnInit() {
     setInterval(() => {
-      this.modifyText(this.emojis, this.i);
+
       if (this.i == 6) this.i = 0; else {
         this.i += 1;
       }
     }, 2000);
   }
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 
 }
