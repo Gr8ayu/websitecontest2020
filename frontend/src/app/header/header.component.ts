@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-import {AuthService} from '../auth.service'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthService } from '../auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +8,28 @@ import {AuthService} from '../auth.service'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  loggedOut:boolean=true;
-  constructor(private auth:AuthService) {}
-  ngOnInit() 
-  {
-    this.loggedOut = this.auth.getAuthenticated() == "true";
+  @Output() childEvent = new EventEmitter();
+  loggedOut: boolean = true;
+
+  constructor(private auth: AuthService, private router: Router) {
+    this.auth.stateChangedEmitter().subscribe(value => {
+      console.log(value + " is authstate");
+      if (value) {
+        this.loggedOut = false;
+      }
+    })
   }
-  logout()
-  {
+
+  logout() {
     this.auth.logout();
+    this.router.navigate(['login']);
   }
+
+  ngOnInit() { }
+
+  scroll(el) {
+    this.childEvent.emit(el);
+  }
+
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ApiService } from '../api.service'
-import {FormControl} from '@angular/forms'
+import { FormControl } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newpost',
@@ -15,13 +16,13 @@ export class NewpostComponent implements OnInit {
   content: string;
   title: string;
   type: string;
-  blogTitle=new FormControl();
+  blogTitle = new FormControl();
 
   config = {
     placeholder: "Start typing here"
   };
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit() { }
 
@@ -30,8 +31,9 @@ export class NewpostComponent implements OnInit {
     this.data = this.myEditor.editorInstance.getData();
     this.api.addBlogPost(this.blogTitle.value, this.data, "Notice").subscribe(data => {
       console.log(data);
+      this.router.navigate(['blogs']);
     }, error => {
-      console.log(error)
+      alert(error);
     });
   }
 

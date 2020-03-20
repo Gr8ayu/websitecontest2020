@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 
@@ -31,7 +32,8 @@ import { AuthService } from './auth.service';
     HeaderComponent,
     FooterComponent,
     ChartComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    SafeHtmlPipe
   ],
   imports: [
     HttpClientModule,
@@ -41,7 +43,7 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

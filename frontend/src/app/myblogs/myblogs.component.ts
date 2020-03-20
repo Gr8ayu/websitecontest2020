@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { BlogPost } from '../blogpost.model';
 
 @Component({
   selector: 'app-myblogs',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyblogsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private api: ApiService) { }
+  currentPost: BlogPost;
   ngOnInit() {
+    this.currentPost = this.api.currentBlogpost;
   }
 
 }
