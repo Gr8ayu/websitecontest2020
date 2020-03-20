@@ -6,7 +6,7 @@
           <div class="col-xl-2 col-lg-2">
             <div class="logo-img">
               <a routerLink="/">
-                <img src="assets/img/logo.png" width="100" alt="">
+                <img src="assets/img/header.png" width="100" alt="">
               </a>
             </div>
           </div>
@@ -15,12 +15,12 @@
               <nav>
                 <ul id="navigation">
                   <li><a (click)="scroll('home')" routerLink="">home</a></li>
-                  <li><a (click)="scroll('work')">Work</a></li>
-                  <li><a (click)="scroll('goals')">Goals</a></li>
-                  <li><a (click)="scroll('achievements')">Achievements</a></li>
+                  <li *ngIf="router.url == '/'"><a (click)="scroll('work')">Work</a></li>
+                  <li *ngIf="router.url == '/'"><a (click)="scroll('goals')">Goals</a></li>
+                  <li *ngIf="router.url == '/'"><a (click)="scroll('achievements')">Achievements</a></li>
                   <li><a routerLink="/activities">Activities</a></li>
                   <li><a routerLink="/blogs">Blogs</a></li>
-                  <li><a routerLink="/contacts/">Contact</a></li>
+                  <li><a routerLink="/contacts">Contact</a></li>
 
                 </ul>
               </nav>

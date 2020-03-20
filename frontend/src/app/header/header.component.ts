@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() { }
 
   scroll(el) {
+
     this.childEvent.emit(el);
   }
 

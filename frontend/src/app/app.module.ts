@@ -19,6 +19,7 @@ import { ActivitiesComponent } from './activities/activities.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { AuthService } from './auth.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
