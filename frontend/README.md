@@ -8,7 +8,7 @@ This website is built using **Django** as backend and **Angular 7** as frontend 
 - Events
 - User Authentication
 -- User Login
--- Add new user
+-- Add new user (Through Django admin page)
 - Blogs
  -- Add new Post
  -- Read Posts
@@ -60,3 +60,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 #### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Bootstrap
+
+Mainly bootstrap 4 framework has been used to stylize all the different CSS classes.
+
+# Configurations to run locally
+To run the website locally use `ng serve` inside the frontend folder to fireup the angular website and run `python manage.py runserver` inside backend/mysite to start the Django backend server. No other configurations are required. To view admin page visit localhost:8000/admin.
+
+Please keep in mind, Angular runs on port 4200 while Django runs on 8000. So, please make sure no other processes are using the above ports.
+
+# Configurations to run on a cloud server like Amazon AWS, Heroku etc
+
+To run the website on a cloud service like Amazon AWS, Heroku, Github etc, please follow the necessary steps to host the website and then be sure to change the url.constants file to configure the new API end points.
+
+# Features provided on this site
+Users have an interactive website that allows them to view the different aspects of coding club.
+
+Members who are registered onto the Django server via the admin page are allowed to create new blog posts.
+
+On the Django Admin Page you can add new users, view and modify blog posts, view contact messages sent by external users.
