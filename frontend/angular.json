@@ -33,7 +33,8 @@
               "src/assets/css/gijgo.css",
               "src/assets/css/animate.min.css",
               "src/assets/css/slick.css",
-              "src/assets/css/slicknav.css"
+              "src/assets/css/slicknav.css",
+              "src/assets/css/owl.carousel.min.css"
             ],
             "scripts": [
               "src/assets/js/test.js",

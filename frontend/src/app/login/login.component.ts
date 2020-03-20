@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginError: boolean = false;
   warningText: string = "";
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit() {}
 
@@ -23,6 +24,10 @@ export class LoginComponent implements OnInit {
       this.warningText = "";
       console.log(this.email.value)
       console.log(this.password.value);
+      this.api.login(this.email.value,this.password.value).subscribe(data=>
+        {
+          console.log(data);
+        });
     }
     else {
       this.warningText = "Please enter a valid Email and Password combination";
@@ -39,6 +44,8 @@ export class LoginComponent implements OnInit {
     }
     else
     {
+      this.loginError=true;
+      this.warningText="Password reset link sent to your email";
       console.log("Password reset email sent");
     }
   }
