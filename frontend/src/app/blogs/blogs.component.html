@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="bradcam_area breadcam_bg_3"></div>
-
+<div class="fab" (click)="newpost()"> + </div>
 <section class="blog_area section-padding">
     <div class="container">
         <div class="row">
@@ -12,7 +12,8 @@
                             <a class="d-inline-block" (click)="loadPost(x['postNumber'])">
                                 <h2>{{x["title"]}}</h2>
                             </a>
-                            <p>{{x["content"].substring(0,100)}}</p>
+
+                            <div [innerHTML]="x['content'].substring(0,100) | safeHtml"></div>
                             <ul class="blog-info-link">
                                 <li>{{x["creationDate"]}}</li>
                             </ul>
@@ -48,18 +49,6 @@
                         </ul>
                     </aside>
 
-                    <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
-                        <div class="media post_item">
-                            <img src="img/post/post_2.png" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>The Amazing Hubble</h3>
-                                </a>
-                                <p>02 Hours ago</p>
-                            </div>
-                        </div>
-                    </aside>
 
                 </div>
             </div>

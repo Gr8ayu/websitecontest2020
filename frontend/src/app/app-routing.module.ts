@@ -11,7 +11,8 @@ import { MyblogsComponent } from './myblogs/myblogs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'newblogs', component: NewpostComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'newpost', component: NewpostComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'login', component: LoginComponent },

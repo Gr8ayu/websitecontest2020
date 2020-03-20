@@ -9,7 +9,7 @@
             <input type="text" style="color:white;" [formControl]="blogTitle" required>
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label >Title</label>
+            <label>Title</label>
           </div>
         </div>
       </div>
@@ -18,11 +18,11 @@
 </div>
 <div class="container">
   <br>
-  <ckeditor #myEditor [editor]="Editor" [config]="config" (ready)=onReady($event)></ckeditor>
+  <ckeditor #myEditor [editor]="Editor" [config]="config"></ckeditor>
   <div>
-    <br/>
+    <br />
     <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
   </div>
 </div>
-<br/>
+<br />
 <app-footer></app-footer>

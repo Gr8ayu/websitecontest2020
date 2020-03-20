@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { BlogPost } from '../blogpost.model';
 import { ApiService } from '../api.service'
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blogs',
@@ -15,10 +17,11 @@ export class BlogsComponent implements OnInit {
   notice = 0;
   somethingelse = 0;
   postNo = 0;
-  constructor(public api: ApiService, private router: Router) { }
+  constructor(public api: ApiService, private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
     this.api.getPosts().subscribe(data => {
+      data = data.reverse();
       data.forEach(element => {
         let blogpost: any = {};
         blogpost.creationDate = element.fields.creationDate;
@@ -33,6 +36,7 @@ export class BlogsComponent implements OnInit {
         if (blogpost.type == "Notice") this.notice += 1;
 
       })
+
     });
 
     this.somethingelse = this.postArray.length - (this.announcements + this.notice);
@@ -43,5 +47,17 @@ export class BlogsComponent implements OnInit {
     this.api.currentBlogpost = this.postArray[event];
     console.log(this.api.currentBlogpost);
     this.router.navigate(['myblog']);
+  }
+
+  newpost() {
+    console.log("Click");
+    if (this.auth.getAuthenticated) {
+      console.log("Logged In");
+      this.router.navigate(['newpost']);
+    } else {
+      alert("You need to be logged in!");
+      this.router.navigate(['login']);
+    }
+
   }
 }

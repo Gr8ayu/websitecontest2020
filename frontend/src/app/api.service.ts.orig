@@ -1,0 +1,62 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+<<<<<<< HEAD
+import { BlogPost } from './blogpost.model'
+=======
+
+>>>>>>> 659be18f80af6352efaecbf9dbb690060525565c
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  currentBlogpost: BlogPost;
+
+  constructor(private http: HttpClient) { }
+  url: string = "http://1f21d446.ngrok.io/api";
+  urlAddPost: string = "/addpost/";
+  urlGetPost: string = "/posts/";
+  urlLogin: string = "/login/"
+
+  headers = new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Access-Control-Allow-Origin': '*'
+<<<<<<< HEAD
+  });
+  options = { headers: this.headers };
+  addBlogPost(title: string, content: string, type: string): any {
+    if (type == "" || type == null)
+      type = "Notice";
+    var postData = "title:\'" + title + "\ncontent:" + content + "\ntype:" + type;
+    console.log(postData);
+    console.log(this.url);
+    return this.http.post(this.url + this.urlAddPost, postData, this.options);
+=======
+   });
+ options = { headers: this.headers };
+  addBlogPost(title:string,content:string,type:string):any
+  {
+    if(type==""||type==null)
+      type="Notice";
+    var formData: any = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("type",type);
+    console.log(formData);
+    return this.http.post(this.url+this.urlAddPost,formData);
+>>>>>>> 659be18f80af6352efaecbf9dbb690060525565c
+  }
+  getPosts(): Observable<any> {
+    return this.http.get(this.url + this.urlGetPost);
+  }
+<<<<<<< HEAD
+
+  login(username: string, password: string) {
+    var postData = { username: username, password: password };
+    return this.http.post(this.url + this.urlLogin, postData);
+  }
+=======
+>>>>>>> 659be18f80af6352efaecbf9dbb690060525565c
+}

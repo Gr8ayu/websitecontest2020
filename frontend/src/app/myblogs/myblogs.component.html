@@ -20,7 +20,7 @@
             <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
           </div>
           <div class="blog_details">
-            {{currentPost['content']}}
+            <div [innerHTML]="currentPost['content'] | safeHtml"></div>
           </div>
         </div>
       </div>

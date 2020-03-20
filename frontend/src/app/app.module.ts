@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ActivitiesComponent } from './activities/activities.component';
     HeaderComponent,
     FooterComponent,
     ChartComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    SafeHtmlPipe
   ],
   imports: [
     HttpClientModule,
