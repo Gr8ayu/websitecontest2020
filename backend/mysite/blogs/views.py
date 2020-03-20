@@ -17,6 +17,16 @@ def login_api(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+
+
+
+        # body_unicode = request.body.decode('utf-8')
+        # body = json.loads(body_unicode)
+        # username = body["username"]
+        # password = body['password']
+
+
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             # sess =login(request, user)
@@ -35,10 +45,12 @@ def login_api(request):
             return HttpResponse(data, content_type="application/json")
             
         else:
-            return HttpResponse("NO USER")
+            # return HttpResponse("NO USER")
+            return redirect('/login/')
+
     else:
         #user_form = loginForm(instance=request.user)
-        return redirect('/login')
+        return redirect('/login/')
 
 def loginView(request):
     return HttpResponse("LOGIN PAGE")
@@ -47,15 +59,15 @@ def loginView(request):
 def addPost_api(request):
     if request.method == 'POST':
         print("_________REQUEST________________")
-        body_unicode = request.body.decode('utf-8')
-        body = json.loads(body_unicode)
-        print(body)
+        # body_unicode = request.body.decode('utf-8')
+        # body = json.loads(body_unicode)
+        # print(body)
         print("_______________________________")
         
-        input()
-        post_type = body["type"]
-        post_title = body['title']
-        post_content = body['content']
+        # input()
+        # post_type = body["type"]
+        # post_title = body['title']
+        # post_content = body['content']
 
         post =  Posts()
         
@@ -65,9 +77,13 @@ def addPost_api(request):
         user = User.objects.get(pk=1)
 
         print(">>>",request.user,"<<<")
-        post.type = post_type
-        post.title = post_title
-        post.content = post_content
+        # post.type = post_type
+        # post.title = post_title
+        # post.content = post_content
+
+        post.type = request.POST['type']
+        post.title = request.POST['title']
+        post.content = request.POST['content']
 
         post.author = user
         post.publish = True
