@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
