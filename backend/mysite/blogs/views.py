@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.core import serializers
 from .models import Posts
 from django.utils import timezone
+from django.contrib.sessions.models import Session
 # Create your views here.
 
 
@@ -16,10 +17,15 @@ def login_api(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            # sess =login(request, user)
             data = serializers.serialize("json", [user,])
-            # print(data)
-            return HttpResponse(data, content_type="application/json")
+            # sess = user.get_session_auth_hash()
+            # print(user.__dict__)
+            # print(sess)
+            sess = Session.objects.filter(pk= request.POST['sessionid'])
+            sess = serializers.serialize("json", sess)
+            print(sess)
+            return HttpResponse(sess, content_type="application/json")
             
         else:
             return HttpResponse("NO USER")
