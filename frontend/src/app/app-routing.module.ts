@@ -7,10 +7,12 @@ import { BlogsComponent } from './blogs/blogs.component'
 import { ContactsComponent } from './contacts/contacts.component'
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'newblogs', component: NewpostComponent },
+  { path: 'newblogs', component: NewpostComponent, canActivate:[AuthGuard]},
   { path: 'blogs', component: BlogsComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'login', component: LoginComponent },
@@ -22,4 +24,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule { 
+}

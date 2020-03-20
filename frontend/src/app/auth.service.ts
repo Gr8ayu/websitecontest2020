@@ -12,7 +12,7 @@ export class AuthService {
   urlLogin:string="/login/"
 
   stateChanged: EventEmitter<boolean> = new EventEmitter();
-  authenticated:boolean=false;
+  authenticated:boolean=true;
 
   public login(username:string,password:string)
   {
