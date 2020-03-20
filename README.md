@@ -33,6 +33,10 @@ This website is built using **Django** as backend and **Angular 7** as frontend 
 run ```pip3 install -r requirements.txt``` to install all dependencies for Django
 ```python3 manage.py runserver``` will start the server at port 8000
 
+for Ubuntu 18.04+
+run ```setup.sh``` to run Django server
+
+
  # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.

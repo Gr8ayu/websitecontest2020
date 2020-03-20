@@ -34,7 +34,7 @@ export class ContactsComponent implements OnInit {
         console.log("Message Submitted");
       },error=>{
         this.submitError=true;
-        this.submitMessage="Message failed to submit.Please make sure you have entered a valid email id."
+        this.submitMessage="Message failed to submit.Please make sure you have entered a valid email id. And check mailgun configuration"
         console.log("Message failed to submit.")
       })
       console.log("Message submitted");
