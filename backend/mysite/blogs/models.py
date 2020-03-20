@@ -22,3 +22,12 @@ class Posts(models.Model):
 
     def __str__(self):
         return self.title
+
+class Message(models.Model):
+    message = models.TextField(blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    email = models.CharField(max_length=50, blank=True)
+    subject = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return self.subject

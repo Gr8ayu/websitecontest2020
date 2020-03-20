@@ -4,10 +4,11 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import login, authenticate,logout
 from django.http import HttpResponse
 from django.core import serializers
-from .models import Posts
+from .models import Posts,  Message
 from django.utils import timezone
 from django.contrib.sessions.models import Session
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 import json
 # Create your views here.
 
@@ -101,3 +102,34 @@ def getPosts_api(request):
     posts = Posts.objects.all()
     data = serializers.serialize("json", posts)
     return HttpResponse(data, content_type="application/json")
+
+@csrf_exempt
+def message_api(request):
+    if request.method == "POST":
+        msg = Message()
+        msg.message = request.POST['message']
+        msg.name = request.POST['name']
+        msg.email = request.POST['email']
+        msg.subject = request.POST['subject']
+
+        msg.save()
+
+        mailcontent = "You recieved a message from {} ({}). \n\n Subject : {} \n\n {}"
+
+        mailcontent = mailcontent.format(msg.name, msg.email, msg.subject, msg.message )
+
+        r = send_mail(
+            'recieved message from website',
+            mailcontent,
+            msg.email,
+            ['anonymouskmr@gmail.com'],
+            fail_silently=False,
+        )
+
+        data = {}
+        data['status'] = "success"
+        return HttpResponse(json.dumps(data), content_type="application/json")
+    data = {}
+    data['status'] = "failed"
+    return HttpResponse(json.dumps(data), content_type="application/json")
+
