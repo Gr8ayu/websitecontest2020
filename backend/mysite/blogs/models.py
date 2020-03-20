@@ -10,7 +10,7 @@ class Posts(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True )
     creationDate = models.DateField(("Date"), default=datetime.date.today)
     publish = models.BooleanField(default=True)
-    type = models.CharField(max_length=10 , choices=[('Notice', 'Notice'), ('Announcement', 'Announce'), ('other', "Other"), ], blank=True );
+    type = models.CharField(max_length=20 , choices=[('Notice', 'Notice'), ('Announce', 'Announce'), ('other', "Other"), ], blank=True );
     title = models.CharField(max_length=50, blank=True)
     content = models.TextField(blank=True);
 

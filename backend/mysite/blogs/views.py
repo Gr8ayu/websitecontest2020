@@ -46,22 +46,21 @@ def loginView(request):
 @csrf_exempt
 def addPost_api(request):
     if request.method == 'POST':
+        print("_________REQUEST________________")
+        print(request.__dict__)
+        print("_______________________________")
+        
+
         post_type = request.POST['type']
         post_title = request.POST['title']
         post_content = request.POST['content']
 
         post =  Posts()
-        # post['type'] = post_type
-        # post['title'] = post_title
-        # post['content'] = post_content
-        # post['author'] = request.user
-        # post['publish'] = True
-        # post['creationDate'] = timezone.now()
         
-        sess = request.COOKIES.get('sessionid','') 
-        session = Session.objects.get(session_key=sess)
-        uid = session.get_decoded().get('_auth_user_id')
-        user = User.objects.get(pk=uid)
+        # sess = request.COOKIES.get('sessionid','') 
+        # session = Session.objects.get(session_key=sess)
+        # uid = session.get_decoded().get('_auth_user_id')
+        user = User.objects.get(pk=1)
 
         print(">>>",request.user,"<<<")
         post.type = post_type
