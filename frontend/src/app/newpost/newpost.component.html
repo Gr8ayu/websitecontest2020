@@ -1,3 +1,5 @@
-<p>
-  newpost works!
-</p>
+<ckeditor #myEditor [editor]="Editor" data="<p>Start typing here</p>" (ready)=onReady($event)></ckeditor>
+<div>
+  <br/>
+  <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
+</div>

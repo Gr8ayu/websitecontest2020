@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 
 @Component({
   selector: 'app-newpost',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newpost.component.css']
 })
 export class NewpostComponent implements OnInit {
-
+  public Editor = ClassicEditor;
+  @ViewChild("myEditor") myEditor:any;
+  data:string;
+  
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onBlogSubmit()
+  {
+    this.data= this.myEditor.editorInstance.getData();
+    console.log(this.data);
   }
 
 }
