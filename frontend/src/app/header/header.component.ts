@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {AuthService} from '../auth.service'
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  authState:string="Login";
+
+  constructor(private auth:AuthService) { }
   @Output() childEvent = new EventEmitter();
   ngOnInit() {
+    if(this.auth.getAuthenticated())
+      this.authState="Logout";
   }
-
-  scroll(el) {
-
-    this.childEvent.emit(el);
-    //el.scrollIntoView();
-  }
-
 
 }

@@ -28,7 +28,7 @@ export class NewpostComponent implements OnInit {
   onBlogSubmit() {
     console.log(this.blogTitle.value)
     this.data = this.myEditor.editorInstance.getData();
-    this.api.addBlogPost("title", "content", "Notice").subscribe(data => {
+    this.api.addBlogPost(this.blogTitle.value, this.data, "Notice").subscribe(data => {
       console.log(data);
     }, error => {
       console.log(error)

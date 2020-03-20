@@ -14,22 +14,12 @@
             <div class="main-menu  d-none d-lg-block text-center">
               <nav>
                 <ul id="navigation">
-<<<<<<< HEAD
                   <li><a class="active" (click)="scroll(home)" routerLink="/">home</a></li>
                   <li><a (click)="scroll(work)">Work</a></li>
                   <li><a (click)="scroll(goals)">Goals</a></li>
                   <li><a (click)="scroll(achievements)">Achievements</a></li>
                   <li><a routerLink="/activities">Activities</a></li>
                   <li><a routerLink="/blogs">Blogs</a></li>
-=======
-                  <li><a class="active" (click)="scroll('home')">home</a></li>
-                  <li><a (click)="scroll('work')">Work</a></li>
-                  <li><a (click)="scroll('goals')">Goals</a></li>
-                  <li><a (click)="scroll('achievements')">Achievements</a></li>
-                  <li><a [routerLink]="['/activities']">Activities</a></li>
-                  <li><a [routerLink]="['/blogs']">Blogs</a></li>
->>>>>>> 641482ace334e7a1528151085611c4e5066cc50a
-
                   <li><a routerLink="/contacts/">Contact</a></li>
 
                 </ul>
@@ -38,7 +28,7 @@
           </div>
           <div class="col-lg-2 d-none d-lg-block">
             <div class="log_chat_area d-flex align-items-end">
-              <a routerLink="/login" data-scroll-nav="0" class="say_hi">Login</a>
+              <a routerLink="/login" data-scroll-nav="0" class="say_hi">{{authState}}</a>
             </div>
           </div>
 
