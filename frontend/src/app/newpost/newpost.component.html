@@ -1,4 +1,8 @@
-<ckeditor #myEditor [editor]="Editor" data="<h2>Title of your blog</h2><p>&nbsp;</p><p>Content of your blog</p>" (ready)=onReady($event)></ckeditor>
+<div class="form-group">
+  <label for="title">Title:</label>
+  <textarea class="form-control" rows="1" id="title"></textarea>
+</div> 
+<ckeditor #myEditor [editor]="Editor" data="<p>Content of your blog</p>" (ready)=onReady($event)></ckeditor>
 <div>
   <br/>
   <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
