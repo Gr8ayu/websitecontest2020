@@ -12,6 +12,7 @@ import { NewpostComponent } from './newpost/newpost.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ContactsComponent } from './contacts/contacts.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ChartComponent } from './chart/chart.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     BlogsComponent,
     MyblogsComponent,
     NewpostComponent,
-    ContactsComponent
+    ContactsComponent,
+    ChartComponent
   ],
   imports: [
     HttpClientModule,

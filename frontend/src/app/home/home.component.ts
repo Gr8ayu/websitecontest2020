@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  i = 0;
-
+  i = 1;
+  temp = 0;
   emojis: any = [
-    '❤️', '🎈', '🎃', '👓', '💋', '📣', '🖥', '💡'
+    '', '❤️', '🎈', '🎃', '👓', '💋', '📣', '🖥', '💡'
   ]
 
 
@@ -20,10 +20,15 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     setInterval(() => {
+      this.temp = this.i;
+      this.i = 0;
+      setTimeout(() => {
+        this.i = this.temp;
+        if (this.i == 6) this.i = 1; else {
+          this.i += 1;
+        }
+      }, 200);
 
-      if (this.i == 6) this.i = 0; else {
-        this.i += 1;
-      }
     }, 2000);
   }
   scroll(el: HTMLElement) {
