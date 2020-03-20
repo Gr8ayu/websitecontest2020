@@ -31,8 +31,10 @@ export class HomeComponent implements OnInit {
 
     }, 2000);
   }
-  scroll(el: HTMLElement) {
-    el.scrollIntoView();
+  scroll(el) {
+    const element = document.getElementById(el)
+    console.log(element)
+    element.scrollIntoView();
   }
 
 }
