@@ -7,7 +7,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 class Posts(models.Model):
-    # author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True )
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True )
     creationDate = models.DateField(("Date"), default=datetime.date.today)
     publish = models.BooleanField(default=True)
     type = models.CharField(max_length=10 , choices=[('Notice', 'Notice'), ('Announcement', 'Announce'), ('other', "Other"), ], blank=True );
