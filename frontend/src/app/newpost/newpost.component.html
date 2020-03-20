@@ -1,44 +1,4 @@
-<header>
-  <div class="header-area ">
-    <div id="sticky-header" class="main-header-area">
-      <div class="container-fluid p-0">
-        <div class="row align-items-center no-gutters">
-          <div class="col-xl-2 col-lg-2">
-            <div class="logo-img">
-              <a href="index.html">
-                <img src="assets/img/logo.png" width="100" alt="">
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-8 col-lg-8">
-            <div class="main-menu  d-none d-lg-block text-center">
-              <nav>
-                <ul id="navigation">
-                  <li><a class="active" (click)="scroll(home)">home</a></li>
-                  <li><a (click)="scroll(work)">Projects</a></li>
-                  <li><a [routerLink]="['./blogs']">Blogs</a></li>
-
-                  <li><a (click)="scroll(contact)">Contact</a></li>
-
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="col-lg-2 d-none d-lg-block">
-            <div class="log_chat_area d-flex align-items-end">
-              <a [routerLink]="['./login']" data-scroll-nav="0" class="say_hi">Login</a>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mobile_menu d-block d-lg-none"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
+<app-header></app-header>
 <div class="bradcam_area breadcam_bg_3">
   <div class="container">
     <div class="row">
@@ -60,7 +20,9 @@
   <br>
   <ckeditor #myEditor [editor]="Editor" [config]="config" (ready)=onReady($event)></ckeditor>
   <div>
-    <br />
+    <br/>
     <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
   </div>
 </div>
+<br/>
+<app-footer></app-footer>
