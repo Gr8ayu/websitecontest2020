@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onLoginClick() {
-    if(!this.auth.getAuthenticated())
+    if(this.auth.getAuthenticated()=="false")
     {
     console.log(this.auth.getAuthenticated());
     this.loginError = false;
@@ -35,12 +35,13 @@ export class LoginComponent implements OnInit {
         {
             this.loginError=false;
             this.warningText="";
-            this.auth.setAuthenticated(true);
+            this.auth.setAuthenticated("true");
             this.router.navigate(['/'])
         },
         (error) => 
         {
          this.loginError=true;
+         this.auth.setAuthenticated("false");
          this.warningText="Please check your credentials again";
         }
       )
@@ -52,7 +53,8 @@ export class LoginComponent implements OnInit {
   }
   else
   {
-    console.log("Nuh uh");
+    console.log("Logging you out");
+    this.auth.logout();
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service'
 
 @Component({
@@ -7,19 +7,15 @@ import {AuthService} from '../auth.service'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   loggedOut:boolean=true;
-
-  constructor(private auth:AuthService) {
-    this.auth.stateChangedEmitter().subscribe(value=>
-      {
-        console.log(value+" is authstate");
-        if(value)
-        {
-          this.loggedOut=false;    
-        }    
-      })
-   }
-  ngOnInit() {}
+  constructor(private auth:AuthService) {}
+  ngOnInit() 
+  {
+    this.loggedOut = this.auth.getAuthenticated() == "true";
+  }
+  logout()
+  {
+    this.auth.logout();
+  }
 
 }

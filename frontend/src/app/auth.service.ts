@@ -22,25 +22,21 @@ export class AuthService {
     return this.http.post(this.url+this.urlLogin,formData);
   }
 
-  public setAuthenticated(value:boolean)
+  public setAuthenticated(value:string)
   {
-    this.authenticated=value;
-    this.stateChanged.emit(this.authenticated);
+    localStorage.setItem('loginStatus',value);
   }
   
   getAuthenticated()
   {
-    return this.authenticated;
+    return localStorage.getItem('loginStatus');
   }
 
   logout()
   {
-    this.authenticated=false;
-    this.stateChanged.emit(this.authenticated);
+    localStorage.setItem('loginStatus',"false");
   }
 
-  stateChangedEmitter() {
-    return this.stateChanged;
-  }
+  
 
 }
