@@ -28,8 +28,13 @@
           </div>
           <div class="col-lg-2 d-none d-lg-block">
             <div class="log_chat_area d-flex align-items-end">
+<<<<<<< HEAD
+              <a routerLink="/login" data-scroll-nav="0" class="say_hi" *ngIf="loggedOut==true">Login</a>
+              <a (click)="logout()" data-scroll-nav="0" class="say_hi" *ngIf="loggedOut==false">Logout</a>
+=======
               <a routerLink="/login" data-scroll-nav="0" class="say_hi" *ngIf="!auth.authenticated">Login</a>
               <a (click)="logout()" data-scroll-nav="0" class="say_hi" *ngIf="auth.authenticated">Logout</a>
+>>>>>>> aa1e61ecd830149a4783cc9f224b42e4434e1982
             </div>
           </div>
 

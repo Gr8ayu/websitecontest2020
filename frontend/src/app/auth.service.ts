@@ -36,8 +36,6 @@ export class AuthService {
     this.stateChanged.emit(this.authenticated);
   }
 
-  stateChangedEmitter() {
-    return this.stateChanged;
-  }
+  
 
 }
