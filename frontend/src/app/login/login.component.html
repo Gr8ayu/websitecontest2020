@@ -1,29 +1,42 @@
 <app-header></app-header>
 
-<div class="bradcam_area breadcam_bg_3"></div>
-
-<div class="card mat-elevation-z10" style=" width:500px; padding: 50px; margin-top: 20vh; margin-right:100px;">
-  <div class="card-body">
-    <h5 class="card-title mb-4 mt-1">Sign In</h5>
-    <form>
-      <div class="form-group">
-        <label>Your Email</label>
-        <input name="email" placeholder="Email" [formControl]="email" type="text" class="form-control" required>
+<div class="bradcam_area breadcam_bg_3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text">
+          <h3>Login</h3>
+          <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Coding club actively conducts numerous
+            You need to be a coding club member to make new posts.
+          </p>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input name="password" placeholder="Password" [formControl]="password" type="password" class="form-control"
-          required>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" a (click)="onLoginClick()">Login
-        </button>
-      </div>
-    </form>
-    <div class="alert alert-warning" role="alert" *ngIf=loginError>
-      {{warningText}}
     </div>
   </div>
 </div>
-
+<div class="container" style="align-items: center;">
+  <div class="card mat-elevation-z10" style=" width:500px; padding: 50px; margin: 50px">
+    <div class="card-body">
+      <h5 class="card-title mb-4 mt-1">Sign In</h5>
+      <form>
+        <div class="form-group">
+          <label>Your Username</label>
+          <input name="email" placeholder="Username" [formControl]="email" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input name="password" placeholder="Password" [formControl]="password" type="password" class="form-control"
+            required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" a (click)="onLoginClick()">Login
+          </button>
+        </div>
+      </form>
+      <div class="alert alert-warning" role="alert" *ngIf=loginError>
+        {{warningText}}
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

@@ -7,23 +7,33 @@ import { BlogsComponent } from './blogs/blogs.component'
 import { ContactsComponent } from './contacts/contacts.component'
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
+<<<<<<< HEAD
+import { MyblogsComponent } from './myblogs/myblogs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'newblogs', component: NewpostComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'newpost', component: NewpostComponent },
+=======
+import { AuthGuard } from './auth.guard';
+
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'newblogs', component: NewpostComponent, canActivate:[AuthGuard]},
+>>>>>>> 10e0404aa095279c864e646c2fec514418fd2171
   { path: 'blogs', component: BlogsComponent },
   { path: 'contacts', component: ContactsComponent },
-<<<<<<< HEAD
   { path: 'login', component: LoginComponent },
   { path: 'chart', component: ChartComponent },
-  { path: 'activities', component: ActivitiesComponent }
-=======
-  { path: 'login' , component: LoginComponent}
->>>>>>> 9c3d095f85805348581fb346479c3065b5b0affb
+  { path: 'activities', component: ActivitiesComponent },
+  { path: 'myblog', component: MyblogsComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule { 
+}

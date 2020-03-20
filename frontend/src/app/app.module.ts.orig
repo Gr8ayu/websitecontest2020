@@ -11,14 +11,17 @@ import { MyblogsComponent } from './myblogs/myblogs.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ContactsComponent } from './contacts/contacts.component';
-import {HttpClientModule} from '@angular/common/http';
-<<<<<<< HEAD
-import { ChartComponent } from './chart/chart.component';
-=======
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
->>>>>>> 700e78d06965e1abdfaddd01909fb6e128a8620a
-
+import { ChartComponent } from './chart/chart.component';
+import { ActivitiesComponent } from './activities/activities.component';
+<<<<<<< HEAD
+import { SafeHtmlPipe } from './safe-html.pipe';
+=======
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
+>>>>>>> 10e0404aa095279c864e646c2fec514418fd2171
 
 @NgModule({
   declarations: [
@@ -29,12 +32,11 @@ import { FooterComponent } from './footer/footer.component';
     MyblogsComponent,
     NewpostComponent,
     ContactsComponent,
-<<<<<<< HEAD
-    ChartComponent
-=======
     HeaderComponent,
-    FooterComponent
->>>>>>> 700e78d06965e1abdfaddd01909fb6e128a8620a
+    FooterComponent,
+    ChartComponent,
+    ActivitiesComponent,
+    SafeHtmlPipe
   ],
   imports: [
     HttpClientModule,
@@ -44,7 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
