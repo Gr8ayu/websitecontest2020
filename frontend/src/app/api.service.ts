@@ -10,20 +10,22 @@ import {BlogPost} from './blogpost.model'
 export class ApiService {
 
   constructor(private http:HttpClient) {}
-  url:string="http://127.0.0.1:8000/api";
+  url:string="http://1f21d446.ngrok.io/api";
   urlAddPost:string="/addpost/";
   urlGetPost:string="/posts"
 
   headers = new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Access-Control-Allow-Origin': '*'
    });
  options = { headers: this.headers };
   addBlogPost(title:string,content:string,type:string):any
   {
     if(type==""||type==null)
       type="Notice";
-    var postData={title:title,content:content,type:type};
+    var postData="title:\'"+title+"\ncontent:"+content+"\ntype:"+type;
     console.log(postData);
+    console.log(this.url);
     return this.http.post(this.url+this.urlAddPost,postData,this.options);
   }
   getProducts():Observable<any>
