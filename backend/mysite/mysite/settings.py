@@ -122,3 +122,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandboxf724a5d0f0e24ccb893999dda5eee21f.mailgun.org'
+EMAIL_HOST_PASSWORD = 'd85203804f0bd680c00681f22aaf4444-9a235412-9e93c0c1'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Coding Club  <noreply@example.com>'
