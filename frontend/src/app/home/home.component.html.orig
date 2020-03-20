@@ -19,8 +19,13 @@
           <div class="row align-items-center no-gutters">
             <div class="col-xl-2 col-lg-2">
               <div class="logo-img">
+<<<<<<< HEAD
                 <a href="index.html">
                   <img src="assets/img/logo.png" width="100" alt="">
+=======
+                <a href="/">
+                  <img src="assets/img/logo.png" alt="">
+>>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
                 </a>
               </div>
             </div>
@@ -28,12 +33,20 @@
               <div class="main-menu  d-none d-lg-block text-center">
                 <nav>
                   <ul id="navigation">
+<<<<<<< HEAD
                     <li><a class="active" (click)="scroll(home)">home</a></li>
                     <li><a (click)="scroll(work)">Projects</a></li>
-                    <li><a [routerLink]="['./blogs']">Blogs</a></li>
+                    <li><a [routerLink]="['./blog']">Blogs</a></li>
 
                     <li><a (click)="scroll(contact)">Contact</a></li>
 
+=======
+                    <li><a class="active" href="/">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="/newblogs">Blogs</a></li>
+
+                    <li><a href="/contacts">Contact</a></li>
+>>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
                   </ul>
                 </nav>
               </div>
@@ -156,9 +169,14 @@
                 <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".6s" href="#">Portfolio</a>
                 </li>
                 <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".8s" href="#">Pages</a></li>
+<<<<<<< HEAD
                 <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"
                     [routerLink]="['./blog']">Blog</a></li>
                 <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s" href="#">Contact</a></li>
+=======
+                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s" href="/newConblogs">Blog</a></li>
+                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s" href="/contacts">Contact</a></li>
+>>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
               </ul>
             </div>
           </div>

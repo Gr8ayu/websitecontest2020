@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header>
   <div class="header-area ">
     <div id="sticky-header" class="main-header-area">
@@ -63,4 +64,10 @@
     <br />
     <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
   </div>
+=======
+<ckeditor #myEditor [editor]="Editor" data="<h2>Title of your blog</h2><p>&nbsp;</p><p>Content of your blog</p>" (ready)=onReady($event)></ckeditor>
+<div>
+  <br/>
+  <button class="btn btn-primary" (click)="onBlogSubmit()">Submit Blog Post</button>
+>>>>>>> ef6a9c41d307a3ea15dc197ae5baf9dc6f43ec14
 </div>
