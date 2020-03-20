@@ -14,7 +14,8 @@ export class ApiService {
 
   urlAddPost: string = "/addpost/";
   urlGetPost: string = "/posts/";
-  urlLogin: string = "/login/"
+  urlLogin: string = "/login/";
+  urlMessage:string ="/message/";
 
   headers = new HttpHeaders({
     'Content-Type': 'application/x-www-form-urlencoded',
@@ -33,5 +34,16 @@ export class ApiService {
   }
   getPosts(): Observable<any> {
     return this.http.get(url + this.urlGetPost);
+  }
+
+  sendMessage(name:string,email:string,subject:string,message:string)
+  {
+    var formData: any = new FormData();
+    formData.append("name",name);
+    formData.append("email",email);
+    formData.append("subject",subject);
+    formData.append("message",message);
+    console.log(formData);
+    return this.http.post(url+this.urlMessage,formData);
   }
 }
