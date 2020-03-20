@@ -15,19 +15,16 @@ export class LoginComponent implements OnInit {
   password = new FormControl();
   loginError: boolean = false;
   warningText: string = "";
+  authState:boolean=false;
 
   constructor(private router:Router,private auth:AuthService) { }
 
   ngOnInit() {}
 
   onLoginClick() {
-    if(this.auth.getAuthenticated())
+    if(!this.auth.getAuthenticated())
     {
-      this.auth.logout();
-      this.router.navigate(['/']);
-    }
-    else
-    {
+    console.log(this.auth.getAuthenticated());
     this.loginError = false;
     if (this.email.value != "" && this.password.value != "") {
       this.warningText = "";
@@ -53,6 +50,11 @@ export class LoginComponent implements OnInit {
       this.loginError = true;
     }
   }
+  else
+  {
+    console.log("Nuh uh");
   }
+}
+
 
 }

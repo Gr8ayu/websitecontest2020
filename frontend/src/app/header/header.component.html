@@ -5,7 +5,7 @@
         <div class="row align-items-center no-gutters">
           <div class="col-xl-2 col-lg-2">
             <div class="logo-img">
-              <a href="index.html">
+              <a routerLink="/">
                 <img src="assets/img/logo.png" width="100" alt="">
               </a>
             </div>
@@ -28,7 +28,8 @@
           </div>
           <div class="col-lg-2 d-none d-lg-block">
             <div class="log_chat_area d-flex align-items-end">
-              <a routerLink="/login" data-scroll-nav="0" class="say_hi">{{authState}}</a>
+              <a routerLink="/login" data-scroll-nav="0" class="say_hi" *ngIf="loggedOut">Login</a>
+              <a routerLink="/login" data-scroll-nav="0" class="say_hi" *ngIf="loggedOut==false">Logout</a>
             </div>
           </div>
 
