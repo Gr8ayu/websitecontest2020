@@ -8,7 +8,7 @@ from .models import Posts
 from django.utils import timezone
 from django.contrib.sessions.models import Session
 from django.contrib.auth.models import User
-
+import json
 # Create your views here.
 
 
@@ -47,13 +47,15 @@ def loginView(request):
 def addPost_api(request):
     if request.method == 'POST':
         print("_________REQUEST________________")
-        print(request.__dict__)
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        print(body)
         print("_______________________________")
         
-
-        post_type = request.POST['type']
-        post_title = request.POST['title']
-        post_content = request.POST['content']
+        input()
+        post_type = body["type"]
+        post_title = body['title']
+        post_content = body['content']
 
         post =  Posts()
         
