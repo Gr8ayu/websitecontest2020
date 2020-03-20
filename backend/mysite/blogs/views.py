@@ -7,6 +7,8 @@ from django.core import serializers
 from .models import Posts
 from django.utils import timezone
 from django.contrib.sessions.models import Session
+from django.contrib.auth.models import User
+import json
 # Create your views here.
 
 
@@ -22,10 +24,15 @@ def login_api(request):
             # sess = user.get_session_auth_hash()
             # print(user.__dict__)
             # print(sess)
-            sess = Session.objects.filter(pk= request.POST['sessionid'])
-            sess = serializers.serialize("json", sess)
-            print(sess)
-            return HttpResponse(sess, content_type="application/json")
+            # result = request.COOKIES.get('sessionid','') 
+            # session = Session.objects.get(session_key=sess)
+            # uid = session.get_decoded().get('_auth_user_id')
+            # user = User.objects.get(pk=uid)
+            # print(usersess)
+
+            # sess = serializers.serialize("json", sess)
+            # print(sess)
+            return HttpResponse(data, content_type="application/json")
             
         else:
             return HttpResponse("NO USER")
@@ -39,22 +46,30 @@ def loginView(request):
 @csrf_exempt
 def addPost_api(request):
     if request.method == 'POST':
-        post_type = request.POST['type']
-        post_title = request.POST['title']
-        post_content = request.POST['content']
+        print("_________REQUEST________________")
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        print(body)
+        print("_______________________________")
+        
+        input()
+        post_type = body["type"]
+        post_title = body['title']
+        post_content = body['content']
 
         post =  Posts()
-        # post['type'] = post_type
-        # post['title'] = post_title
-        # post['content'] = post_content
-        # post['author'] = request.user
-        # post['publish'] = True
-        # post['creationDate'] = timezone.now()
+        
+        # sess = request.COOKIES.get('sessionid','') 
+        # session = Session.objects.get(session_key=sess)
+        # uid = session.get_decoded().get('_auth_user_id')
+        user = User.objects.get(pk=1)
+
         print(">>>",request.user,"<<<")
         post.type = post_type
         post.title = post_title
         post.content = post_content
-        # post.author = User.object.get()
+
+        post.author = user
         post.publish = True
         post.creationDate = timezone.now()
         post.save()
