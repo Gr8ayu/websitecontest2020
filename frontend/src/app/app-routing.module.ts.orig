@@ -7,21 +7,12 @@ import { BlogsComponent } from './blogs/blogs.component'
 import { ContactsComponent } from './contacts/contacts.component'
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
-<<<<<<< HEAD
-import { MyblogsComponent } from './myblogs/myblogs.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'newpost', component: NewpostComponent },
-=======
 import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'newblogs', component: NewpostComponent, canActivate:[AuthGuard]},
->>>>>>> 10e0404aa095279c864e646c2fec514418fd2171
   { path: 'blogs', component: BlogsComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'login', component: LoginComponent },

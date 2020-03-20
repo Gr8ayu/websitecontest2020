@@ -13,11 +13,7 @@ export class AuthService {
   urlLogin: string = "/login/"
 
   stateChanged: EventEmitter<boolean> = new EventEmitter();
-<<<<<<< HEAD
-  public authenticated: boolean = false;
-=======
   authenticated:boolean=true;
->>>>>>> 10e0404aa095279c864e646c2fec514418fd2171
 
   public login(username: string, password: string) {
     var formData: any = new FormData();

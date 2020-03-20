@@ -35,6 +35,10 @@ export class AuthService {
     this.authenticated = false;
     this.stateChanged.emit(this.authenticated);
   }
+  stateChangedEmitter()
+  {
+    return this.stateChanged;
+  }
 
   
 

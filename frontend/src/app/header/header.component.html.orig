@@ -20,10 +20,6 @@
                   <li><a (click)="scroll(achievements)">Achievements</a></li>
                   <li><a routerLink="/activities">Activities</a></li>
                   <li><a routerLink="/blogs">Blogs</a></li>
-<<<<<<< HEAD
-
-=======
->>>>>>> 659be18f80af6352efaecbf9dbb690060525565c
                   <li><a routerLink="/contacts/">Contact</a></li>
 
                 </ul>

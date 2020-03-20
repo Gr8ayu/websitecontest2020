@@ -22,31 +22,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   onLoginClick() {
-<<<<<<< HEAD
-    if(this.auth.getAuthenticated()=="false")
-    {
-    console.log(this.auth.getAuthenticated());
-    this.loginError = false;
-    if (this.email.value != "" && this.password.value != "") {
-      this.warningText = "";
-      console.log(this.email.value)
-      console.log(this.password.value);
-      this.auth.login(this.email.value,this.password.value).subscribe(
-        (response) => 
-        {
-            this.loginError=false;
-            this.warningText="";
-            this.auth.setAuthenticated("true");
-            this.router.navigate(['/'])
-        },
-        (error) => 
-        {
-         this.loginError=true;
-         this.auth.setAuthenticated("false");
-         this.warningText="Please check your credentials again";
-        }
-      )
-=======
     if (!this.auth.getAuthenticated()) {
       console.log(this.auth.getAuthenticated());
       this.loginError = false;
@@ -72,21 +47,11 @@ export class LoginComponent implements OnInit {
         this.warningText = "Please enter a valid Username and Password combination";
         this.loginError = true;
       }
->>>>>>> aa1e61ecd830149a4783cc9f224b42e4434e1982
     }
     else {
       console.log("Nuh uh");
     }
   }
-<<<<<<< HEAD
-  else
-  {
-    console.log("Logging you out");
-    this.auth.logout();
-  }
-}
-=======
->>>>>>> aa1e61ecd830149a4783cc9f224b42e4434e1982
 
 
 }

@@ -16,12 +16,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartComponent } from './chart/chart.component';
 import { ActivitiesComponent } from './activities/activities.component';
-<<<<<<< HEAD
-import { SafeHtmlPipe } from './safe-html.pipe';
-=======
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
->>>>>>> 10e0404aa095279c864e646c2fec514418fd2171
 
 @NgModule({
   declarations: [
