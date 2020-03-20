@@ -19,13 +19,8 @@
           <div class="row align-items-center no-gutters">
             <div class="col-xl-2 col-lg-2">
               <div class="logo-img">
-<<<<<<< HEAD
                 <a href="index.html">
                   <img src="assets/img/logo.png" width="100" alt="">
-=======
-                <a href="/">
-                  <img src="assets/img/logo.png" alt="">
->>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
                 </a>
               </div>
             </div>
@@ -33,20 +28,14 @@
               <div class="main-menu  d-none d-lg-block text-center">
                 <nav>
                   <ul id="navigation">
-<<<<<<< HEAD
                     <li><a class="active" (click)="scroll(home)">home</a></li>
-                    <li><a (click)="scroll(work)">Projects</a></li>
-                    <li><a [routerLink]="['./blog']">Blogs</a></li>
+                    <li><a (click)="scroll(work)">Work</a></li>
+                    <li><a (click)="scroll(goals)">Goals</a></li>
+                    <li><a (click)="scroll(achievements)">Achievements</a></li>
+                    <li><a [routerLink]="['./blogs']">Blogs</a></li>
 
                     <li><a (click)="scroll(contact)">Contact</a></li>
 
-=======
-                    <li><a class="active" href="/">Home</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="/newblogs">Blogs</a></li>
-
-                    <li><a href="/contacts">Contact</a></li>
->>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
                   </ul>
                 </nav>
               </div>
@@ -76,8 +65,6 @@
                 <div id="border">|</div>
                 <div class="main_text">
                   {{emojis[i]}} code.
-
-
                 </div>
 
                 <div class="switch-wrap d-flex justify-content-between" style="margin-top: 20px !important;">
@@ -90,9 +77,6 @@
                     <input type="checkbox" id="default-switch">
                   </div>
                 </div>
-
-
-
               </h3>
               <!-- <a class="boxed-btn3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s"
                 href="portfolio.html">Visit Our Works</a> -->
@@ -121,95 +105,142 @@
         <div class="col-xl-4 col-md-4">
           <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".4s">
             <div class="icon">
-              <img src="img/svg_icon/1.svg" alt="">
+              <img src="/assets/img/svg_icon/1.svg" alt="">
             </div>
             <h3>Graphic design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+            <p>Photoshop, Adobe XD, Figma.<br> We design the assets ourself. <br></p>
           </div>
         </div>
         <div class="col-xl-4 col-md-4">
           <div class="single_service text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
             <div class="icon">
-              <img src="img/svg_icon/2.svg" alt="">
+              <img src="/assets/img/svg_icon/2.svg" alt="">
             </div>
             <h3>Web design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+            <p>Worked on Web Development projects for top companies including GE Health Care, Infosys.</p>
           </div>
         </div>
         <div class="col-xl-4 col-md-4">
           <div class="single_service text-center wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".4s">
             <div class="icon">
-              <img src="img/svg_icon/3.svg" alt="">
+              <img src="/assets/img/svg_icon/3.svg" alt="">
             </div>
-            <h3>Mobile app</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+            <h3>ML, AI</h3>
+            <p>Experts in Machine Learning and Artifical Intelligence. We build scalable models for all needs.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- footer start -->
-  <footer class="footer">
-    <div class="footer_top">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-2 col-md-3">
-            <div class="footer_logo wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-              <a href="index.html">
-                <img src="/assets/img/logo.png" alt="">
+  <!-- testimonial_area  -->
+  <div class="testimonial_area " #goals>
+    <div class="section_title text-center mb-70">
+      <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">What we do</span>
+      <h3 style="color: white; " class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".2s">
+        Goals as club.
+      </h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="testmonial_active owl-carousel">
+            <div class="single_carousel">
+              <div class="single_testmonial text-center">
+                <div class="quote">
+                  <img src="img/testmonial/quote.svg" alt="">
+                </div>
+                <p>To give students the skills, confidence and opportunity <br>
+                  to change their world using coding and help
+                  them become <br> successful in GSoC, ACM-ICPC and other recognized coding competitions
 
-              </a>
+                  <br>
+
+
+              </div>
             </div>
-          </div>
-          <div class=" col-xl-7 col-lg-7 col-md-9">
-            <div class="menu_links">
-              <ul>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s" href="#">About</a></li>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s" href="#">Services</a></li>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".6s" href="#">Portfolio</a>
-                </li>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".8s" href="#">Pages</a></li>
-<<<<<<< HEAD
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"
-                    [routerLink]="['./blog']">Blog</a></li>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s" href="#">Contact</a></li>
-=======
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s" href="/newConblogs">Blog</a></li>
-                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s" href="/contacts">Contact</a></li>
->>>>>>> 585716972b29689e2de9e037176565c48a18ecf7
-              </ul>
+            <div class="single_carousel">
+              <div class="single_testmonial text-center">
+                <div class="quote">
+                  <img src="img/testmonial/quote.svg" alt="">
+                </div>
+                <p>To develop coding skills among the students and incorporate a coding culture.
+
+
+
+              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-12">
-            <div class="socail_links">
-              <ul>
-                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" href="#"> <i
-                      class="fa fa-facebook"></i> </a></li>
-                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" href="#"> <i
-                      class="fa fa-twitter"></i> </a></li>
-                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" href="#"> <i
-                      class="fa fa-instagram"></i> </a></li>
-                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s" href="#"> <i
-                      class="fa fa-google-plus"></i> </a></li>
-              </ul>
+            <div class="single_carousel">
+              <div class="single_testmonial text-center">
+                <div class="quote">
+                  <img src="img/testmonial/quote.svg" alt="">
+                </div>
+                <p>To mentor students with Google recognized organizations <br> and help them contribute to open source
+                </p>
+
+              </div>
+            </div>
+            <div class="single_carousel">
+              <div class="single_testmonial text-center">
+                <div class="quote">
+                  <img src="img/testmonial/quote.svg" alt="">
+                </div>
+                <p>To Give Opportunity to each and every student of the club to crack <br> globally recognized
+                  competitions
+                  such as Google Code Jam and ACM ICPC
+                </p>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="copy-right_text">
-      <div class="container">
-        <div class="footer_border"></div>
-        <div class="row">
-          <div class="col-xl-12">
-            <p class="copy_right text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.3s">
+  </div>
 
+  <div class="team_area ">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section_title text-center mb-90">
+            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Growth</h3>
+            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Every friday, we host an online
+              competitive coding competition for the members of our team and
+              the growth in the number of participants has been inspiring!
             </p>
           </div>
         </div>
       </div>
+      <app-chart></app-chart>
     </div>
-  </footer>
+  </div>
+
+  <div class="team_area " #achievements>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section_title text-center mb-90">
+            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Achievements</h3>
+            <ul class="unordered-list wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+              <li> Participated in the ACM-ICPC Regionals at Amritapuri, 2020 and 2018 </li>
+              <li> Winners and 2nd runners up at XCeed Geek!athon, 2018 </li>
+              <li> 2nd runners up at Bosch’s iNSCRIBE 2017 </li>
+              <li> 2nd runners up in Cisco Ideathon 2018 </li>
+              <li> Winners and Runners up, Techathlon, Curl Analytics. </li>
+              <li> Winner inGenious hackathon 2018. </li>
+              <li> Over 60 club members from the 3rd year have received internships over the last semester.</li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- footer start -->
+  <app-footer></app-footer>
   <!--/ footer end  -->
 
   <!-- JS here -->
