@@ -23,6 +23,10 @@ This website is built using **Django** as backend and **Angular 7** as frontend 
     **Secure** — A lot of security features to prevent attacks like SQL injection and cross-site scripting.
     **Scalable** — It can bear heavy traffic demand making it a good fit for busy websites.
 
+The login credentials for the demo
+
+Username : IEEEadmin
+Password : password123!
 
 #### requirements
 - Django==2.1.5
