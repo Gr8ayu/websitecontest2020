@@ -11,6 +11,7 @@ import { MyblogsComponent } from './myblogs/myblogs.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ContactsComponent } from './contacts/contacts.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     ContactsComponent
   ],
   imports: [
+    HttpClientModule,
     CKEditorModule,
     BrowserModule,
     AppRoutingModule,

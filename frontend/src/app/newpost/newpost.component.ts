@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import {ApiService} from '../api.service'
 
 @Component({
   selector: 'app-newpost',
@@ -11,15 +11,24 @@ export class NewpostComponent implements OnInit {
   public Editor = ClassicEditor;
   @ViewChild("myEditor") myEditor:any;
   data:string;
-  
-  constructor() { }
+  content:string;
+  title:string;
+  type:string;
+
+  constructor(private api:ApiService) { }
 
   ngOnInit() {}
 
   onBlogSubmit()
   {
     this.data= this.myEditor.editorInstance.getData();
-    console.log(this.data);
+    this.api.addBlogPost("title","content","Notice").subscribe(data=>
+      {
+        console.log(data);
+      },error=>
+      {
+        console.log(error)
+      });
   }
 
 }
