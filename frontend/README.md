@@ -80,7 +80,3 @@ Users have an interactive website that allows them to view the different aspects
 Members who are registered onto the Django server via the admin page are allowed to create new blog posts.
 
 On the Django Admin Page you can add new users, view and modify blog posts, view contact messages sent by external users.
-
-# Mailgun Configuration
-
-In order to better serve our users, we have set up a mailgun server that sends emails when they try and contact your page or leave a message. Please make sure that Mailgun configurations are properly setup inside settings.py
