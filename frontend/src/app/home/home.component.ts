@@ -9,15 +9,13 @@ export class HomeComponent implements OnInit {
   i = 1;
   temp = 0;
   emojis: any = [
-    '', '❤️', '🎈', '🎃', '👓', '💋', '📣', '🖥', '💡'
+    '', '❤️', '🎈', '🎃', '⚽', '📖', '🗣', '👀', '💋', '📣', '💡'
   ]
 
 
   constructor() { }
 
-  darktheme() {
-    console.log("You want dark?");
-  }
+
   ngOnInit() {
     setInterval(() => {
       this.temp = this.i;
@@ -33,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
   scroll(el) {
     const element = document.getElementById(el)
-    console.log(element)
+
     element.scrollIntoView();
   }
 

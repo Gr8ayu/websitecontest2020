@@ -34,7 +34,8 @@
               "src/assets/css/animate.min.css",
               "src/assets/css/slick.css",
               "src/assets/css/slicknav.css",
-              "src/assets/css/owl.carousel.min.css"
+              "src/assets/css/owl.carousel.min.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/test.js",
@@ -119,7 +120,7 @@
             "styles": [],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets",
             ]
           }
