@@ -10,9 +10,10 @@ import {BlogPost} from './blogpost.model'
 export class ApiService {
 
   constructor(private http:HttpClient) {}
-  url:string="http://1f21d446.ngrok.io/api";
+  url:string="http://127.0.0.1:8000/api";
   urlAddPost:string="/addpost/";
-  urlGetPost:string="/posts"
+  urlGetPost:string="/posts/";
+  urlLogin:string="/login/"
 
   headers = new HttpHeaders({
     'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,8 +29,14 @@ export class ApiService {
     console.log(this.url);
     return this.http.post(this.url+this.urlAddPost,postData,this.options);
   }
-  getProducts():Observable<any>
+  getPosts():Observable<any>
   {
     return this.http.get(this.url+this.urlGetPost);
+  }
+
+  login(username:string,password:string)
+  {
+    var postData={username:username,password:password};
+    return this.http.post(this.url+this.urlLogin,postData);
   }
 }

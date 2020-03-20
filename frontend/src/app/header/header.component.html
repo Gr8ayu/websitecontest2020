@@ -14,12 +14,12 @@
             <div class="main-menu  d-none d-lg-block text-center">
               <nav>
                 <ul id="navigation">
-                  <li><a class="active" (click)="scroll(home)">home</a></li>
+                  <li><a class="active" (click)="scroll(home)" routerLink="/">home</a></li>
                   <li><a (click)="scroll(work)">Work</a></li>
                   <li><a (click)="scroll(goals)">Goals</a></li>
                   <li><a (click)="scroll(achievements)">Achievements</a></li>
-                  <li><a [routerLink]="['./activities']">Activities</a></li>
-                  <li><a [routerLink]="['./blogs']">Blogs</a></li>
+                  <li><a routerLink="/activities">Activities</a></li>
+                  <li><a routerLink="/blogs">Blogs</a></li>
 
                   <li><a routerLink="/contacts/">Contact</a></li>
 

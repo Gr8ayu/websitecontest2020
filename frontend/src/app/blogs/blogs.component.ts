@@ -14,7 +14,7 @@ export class BlogsComponent implements OnInit {
   constructor(public api:ApiService) { }
 
   ngOnInit() {
-    this.api.getProducts().subscribe(data=>{
+    this.api.getPosts().subscribe(data=>{
       data.forEach(element=>
         {
           let blogpost:any={};
