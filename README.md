@@ -65,6 +65,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Mainly bootstrap 4 framework has been used to stylize all the different CSS classes.
 
 # Configurations to run locally
+Setup the right url path in frontend/src/url.constants.ts pointing the url/api format.
+
 To run the website locally use `ng serve` inside the frontend folder to fireup the angular website and run `python manage.py runserver` inside backend/mysite to start the Django backend server. No other configurations are required. To view admin page visit localhost:8000/admin.
 
 Please keep in mind, Angular runs on port 4200 while Django runs on 8000. So, please make sure no other processes are using the above ports.
