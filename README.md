@@ -1,6 +1,7 @@
 # New web portal for Coding Club!
-
+Live at  https://ieeecodingclub.firebaseapp.com (No backend though :( )
 This website is built using **Django** as backend and **Angular 7** as frontend  for **IEEE Website Development Competition 2020**. Django is an all in one pack having various features and functionalities. It provides a lot of security features and handles vulnerabilities and Angular is Cross-Platform, fast, helps us to make beautiful UI. 
+![Screenshot](/frontend/screenshot.png)
 
 # Content
 - Landing Page
@@ -22,6 +23,10 @@ This website is built using **Django** as backend and **Angular 7** as frontend 
     **Secure** — A lot of security features to prevent attacks like SQL injection and cross-site scripting.
     **Scalable** — It can bear heavy traffic demand making it a good fit for busy websites.
 
+The login credentials for the demo
+
+Username : IEEEadmin
+Password : password123!
 
 #### requirements
 - Django==2.1.5
