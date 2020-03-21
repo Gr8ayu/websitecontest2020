@@ -9,7 +9,7 @@ This website is built using **Django** as backend and **Angular 7** as frontend 
 - Events
 - User Authentication
 -- User Login
--- Add new user (Through Django admin page)
+-- Add new user (Through Django admin page at /admin/ )
 - Blogs
  -- Add new Post
  -- Read Posts
