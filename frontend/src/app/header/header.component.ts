@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   @Output() childEvent = new EventEmitter();
   loggedOut: boolean = true;
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(public auth: AuthService, public router: Router) {
     this.auth.stateChangedEmitter().subscribe(value => {
       console.log(value + " is authstate");
       if (value) {
